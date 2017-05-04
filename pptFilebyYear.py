@@ -1,6 +1,5 @@
 import os, shutil
 from datetime import datetime
-thisyr = 0
 target = ''
 targetYr = '2010'
 rootdir = "d:\incomingppt"
@@ -27,7 +26,6 @@ for siteDir in siteDirs:
                 modDate = os.path.getctime(os.path.join(currSitePath,file1))
                 fileYr = datetime.fromtimestamp(modDate).strftime('%Y')
                 targetYr = fileYr
-                #if str(fileYr) == targetYr:
                 target = os.path.join(currSitePath,str(targetYr))
                 if os.path.exists(os.path.join(currSitePath,str(targetYr))) == False:
                     os.makedirs(target)
